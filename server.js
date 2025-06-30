@@ -5,11 +5,12 @@ const cors = require('cors');
 const app = express();
 const upload = multer();
 
-const R2_ACCESS_KEY_ID = '1a97851a3d59ab74661048250ca6c6d2'; // Poné tu key real
-const R2_SECRET_ACCESS_KEY = 'c2035635518d4a86286fb823368f9e64221344b152eaf6f9a463fc26095f28a9'; // Poné tu secret real
-const R2_BUCKET = 'autos';
-const R2_ENDPOINT = 'https://b8e9969cd7cb127d29e94326868587ec.r2.cloudflarestorage.com';
-const R2_PUBLIC_URL = 'https://pub-89ae4203d72c4ba9825b47d5c1c74291.r2.dev';
+const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID;
+const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY;
+const R2_BUCKET = process.env.R2_BUCKET;
+const R2_ENDPOINT = process.env.R2_ENDPOINT;
+const R2_PUBLIC_URL = process.env.R2_PUBLIC_URL;
+
 
 const s3 = new AWS.S3({
   accessKeyId: R2_ACCESS_KEY_ID,
