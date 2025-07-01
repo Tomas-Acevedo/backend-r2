@@ -62,4 +62,10 @@ app.post('/upload-multiple', upload.array('files'), async (req, res) => {
   res.json({ urls });
 });
 
+
+app.get('/ping', (req, res) => {
+  res.send('pong');
+});
+
+
 app.listen(4000, () => console.log('Server on http://localhost:4000'));
