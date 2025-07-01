@@ -21,7 +21,11 @@ const s3 = new AWS.S3({
   s3ForcePathStyle: true,
 });
 
-app.use(cors());
+app.use(cors({
+  origin: "https://catalogo-autos.netlify.app"
+}));
+
+
 
 // Subir una sola imagen
 app.post('/upload', upload.single('file'), (req, res) => {
